@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin: 40px;
+        }
+
+        .header, .footer {
+            width: 100%;
+        }
+
+            .header .left, .header .right {
+                display: inline-block;
+                vertical-align: top;
+                width: 49%;
+            }
+
+            .header .right {
+                text-align: right;
+            }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .info-table, .item-table, .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+            .item-table th, .item-table td, .summary-table td {
+                border: 1px solid #000;
+                padding: 8px;
+            }
+
+            .item-table th {
+                background-color: #f0f0f0;
+            }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .mt-30 {
+            margin-top: 30px;
+        }
+
+        .comments {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="left">
+            <strong>{{ CompanyName }}</strong><br />
+            {{ CompanyStreet }}<br />
+            {{ CompanyCityZip }}<br />
+            Phone: {{ CompanyPhone }}<br />
+            Fax: {{ CompanyFax }}<br />
+            Website: {{ CompanyWebsite }}
+        </div>
+        <div class="right">
+            <strong>Invoice Date:</strong> {{ InvoiceDate }}<br />
+            <strong>Invoice #:</strong> {{ InvoiceNumber }}<br />
+            <strong>Customer ID:</strong> {{ CustomerId }}<br />
+            <strong>Due Date:</strong> {{ DueDate }}
+        </div>
+    </div>
+
+    <!-- Bill To -->
+    <div class="section-title">Bill To:</div>
+    <table class="info-table">
+        <tr><td>{{ ClientName }}</td></tr>
+        <tr><td>{{ ClientCompany }}</td></tr>
+        <tr><td>{{ ClientStreet }}</td></tr>
+        <tr><td>{{ ClientCityZip }}</td></tr>
+        <tr><td>Phone: {{ ClientPhone }}</td></tr>
+    </table>
+
+    <!-- Items -->
+    <div class="section-title">Items:</div>
+    <table class="item-table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Taxed</th>
+                <th class="text-right">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ for item in Items }}
+            <tr>
+                <td>{{ item.Description }}</td>
+                <td>{{ if item.IsTaxed }}Yes{{ else }}No{{ end }}</td>
+                <td class="text-right">{{ item.Amount | string.format "$0.00" }}</td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+
+    <!-- Summary -->
+    <table class="summary-table mt-30">
+        <tr>
+            <td class="text-right">Subtotal:</td>
+            <td class="text-right">{{ Subtotal | string.format "$0.00" }}</td>
+        </tr>
+        <tr>
+            <td class="text-right">Taxable Amount:</td>
+            <td class="text-right">{{ TaxableAmount | string.format "$0.00" }}</td>
+        </tr>
+        <tr>
+            <td class="text-right">Tax Rate:</td>
+            <td class="text-right">{{ TaxRate | string.format "0.00%" }}</td>
+        </tr>
+        <tr>
+            <td class="text-right">Tax Due:</td>
+            <td class="text-right">{{ TaxDue | string.format "$0.00" }}</td>
+        </tr>
+        <tr>
+            <td class="text-right">Other Charges:</td>
+            <td class="text-right">{{ OtherCharges | string.format "$0.00" }}</td>
+        </tr>
+        <tr>
+            <td class="text-right"><strong>Total:</strong></td>
+            <td class="text-right"><strong>{{ Total | string.format "$0.00" }}</strong></td>
+        </tr>
+    </table>
+
+    <!-- Comments -->
+    <div class="comments">
+        <div class="section-title">Other Comments:</div>
+        <ul>
+            {{ for comment in OtherComments }}
+            <li>{{ comment }}</li>
+            {{ end }}
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer mt-30">
+        <p><strong>Make all checks payable to:</strong> {{ PayableTo }}</p>
+        <p>
+            If you have any questions about this invoice, please contact<br />
+            {{ ContactInfo }}
+        </p>
+    </div>
+
+</body>
+</html>
