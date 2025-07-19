@@ -12,7 +12,7 @@ namespace PdfReportGeneratorAPI.Services
             // we are passing the string of html(converted into text) into Render but first we are pasrsing it
             // so that it can fill in all the placeholders using the Render(Model) method.
             var parsedTemplate = Template.Parse(template);
-            var htmlContent = parsedTemplate.Render(model);
+            var htmlContent = parsedTemplate.Render(model, member => member.Name);
 
             var browserDownloaded = false;
 

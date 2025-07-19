@@ -103,7 +103,7 @@
             <tr>
                 <td>{{ item.Description }}</td>
                 <td>{{ if item.IsTaxed }}Yes{{ else }}No{{ end }}</td>
-                <td class="text-right">{{ item.Amount | string.format "$0.00" }}</td>
+                <td class="text-right">${{ item.Amount | math.format "$0.00" }}</td>
             </tr>
             {{ end }}
         </tbody>
@@ -113,27 +113,27 @@
     <table class="summary-table mt-30">
         <tr>
             <td class="text-right">Subtotal:</td>
-            <td class="text-right">{{ Subtotal | string.format "$0.00" }}</td>
+            <td class="text-right">${{ Subtotal | math.format "$0.00" }}</td>
         </tr>
         <tr>
             <td class="text-right">Taxable Amount:</td>
-            <td class="text-right">{{ TaxableAmount | string.format "$0.00" }}</td>
+            <td class="text-right">${{ TaxableAmount | math.format "$0.00" }}</td>
         </tr>
         <tr>
             <td class="text-right">Tax Rate:</td>
-            <td class="text-right">{{ TaxRate | string.format "0.00%" }}</td>
+            <td class="text-right">{{ TaxRate | math.format "0.00%" }}</td>
         </tr>
         <tr>
             <td class="text-right">Tax Due:</td>
-            <td class="text-right">{{ TaxDue | string.format "$0.00" }}</td>
+            <td class="text-right">${{ TaxDue | math.format "$0.00" }}</td>
         </tr>
         <tr>
             <td class="text-right">Other Charges:</td>
-            <td class="text-right">{{ OtherCharges | string.format "$0.00" }}</td>
+            <td class="text-right">${{ OtherCharges | math.format "$0.00" }}</td>
         </tr>
         <tr>
             <td class="text-right"><strong>Total:</strong></td>
-            <td class="text-right"><strong>{{ Total | string.format "$0.00" }}</strong></td>
+            <td class="text-right"><strong>${{ Total | math.format "$0.00" }}</strong></td>
         </tr>
     </table>
 
@@ -149,7 +149,7 @@
 
     <!-- Footer -->
     <div class="footer mt-30">
-        <p><strong>Make all checks payable to:</strong> {{ PayableTo }}</p>
+        
         <p>
             If you have any questions about this invoice, please contact<br />
             {{ ContactInfo }}

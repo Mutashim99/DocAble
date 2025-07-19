@@ -31,7 +31,7 @@
         public decimal Total { get; set; }
 
         public List<string> OtherComments { get; set; }
-        public string PayableTo { get; set; }
+        
         public string ContactInfo { get; set; } // Name, phone, email
     }
 }
