@@ -40,5 +40,30 @@ namespace PdfReportGeneratorAPI.Controllers
                 return StatusCode(500, $"Error generating PDF: {ex.Message}");
             }
         }
+        [HttpPost("Letter")]
+        public async Task<IActionResult> GetLetter([FromBody] Letter letter)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                var templatePath = Path.Combine(env.ContentRootPath, "Templates", "LetterTemplate.html");
+                if (!System.IO.File.Exists(templatePath))
+                {
+                    return NotFound("Can not find the Template for Letter");
+                }
+                var templateContent = await System.IO.File.ReadAllTextAsync(templatePath);
+
+                var pdfReturnedFromService = await pdfGeneratorService.GeneratePdfAsync<Letter>(letter, templateContent);
+
+                return File(pdfReturnedFromService, "application/pdf", "Letter.pdf");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error generating PDF: {ex.Message}");
+            }
+        }
     }
 }
