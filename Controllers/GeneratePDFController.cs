@@ -5,7 +5,7 @@ using PdfReportGeneratorAPI.Services;
 
 namespace PdfReportGeneratorAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/pdf/generate")]
     [ApiController]
     public class GeneratePDFController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace PdfReportGeneratorAPI.Controllers
             this.env = env;
         }
 
-        [HttpPost("Invoice")]
+        [HttpPost("invoice")]
         public async Task<IActionResult> GetInvoice([FromBody] Invoice invoice)
         {
             try { 
@@ -40,7 +40,7 @@ namespace PdfReportGeneratorAPI.Controllers
                 return StatusCode(500, $"Error generating PDF: {ex.Message}");
             }
         }
-        [HttpPost("Letter")]
+        [HttpPost("letter")]
         public async Task<IActionResult> GetLetter([FromBody] Letter letter)
         {
             try

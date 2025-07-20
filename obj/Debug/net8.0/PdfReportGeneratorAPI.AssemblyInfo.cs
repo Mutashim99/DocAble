@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PdfReportGeneratorAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e63cbaa3f6903a6bbb851fc61fe97db87f16282a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a78e1468839aedcd0664a5acd00aaaaaaa7ee966")]
 [assembly: System.Reflection.AssemblyProductAttribute("PdfReportGeneratorAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PdfReportGeneratorAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
