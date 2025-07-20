@@ -1,5 +1,6 @@
-﻿using PuppeteerSharp;
-using PuppeteerSharp.Media;
+﻿using PuppeteerSharp.Media;
+using PuppeteerSharp;
+using PuppeteerSharp.BrowserData;
 using Scriban;
 
 namespace PdfReportGeneratorAPI.Services
@@ -8,28 +9,29 @@ namespace PdfReportGeneratorAPI.Services
     {
         public async Task<byte[]> GeneratePdfAsync<T>(T model, string template)
         {
+            // we are passing the string of html(converted into text) into Render but first we are pasrsing it
+            // so that it can fill in all the placeholders using the Render(Model) method.
             var parsedTemplate = Template.Parse(template);
             var htmlContent = parsedTemplate.Render(model, member => member.Name);
 
-            // Download Chromium browser if not already downloaded
-            var browserFetcher = new BrowserFetcher();
-            var revisionInfo = await browserFetcher.DownloadAsync();
+            var browserDownloaded = false;
 
-            var launchOptions = new LaunchOptions
+            if (!browserDownloaded)
             {
-                Headless = true,
-                ExecutablePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe", // Adjust path if needed
-                Args = new[]
-     {
-        "--no-sandbox",
-        "--disable-setuid-sandbox"
-    }
-            };
+                var browserFetcher = new BrowserFetcher();
+                await browserFetcher.DownloadAsync();
+                browserDownloaded = true;
+            }
 
+            // launching browser(after downloading it)
+            await using var browser = await Puppeteer.LaunchAsync(new LaunchOptions
+            {
+                Headless = true
+            }) ;
 
-            await using var browser = await Puppeteer.LaunchAsync(launchOptions);
-            await using var page = await browser.NewPageAsync();
-
+            
+            await using var page = await browser.NewPageAsync(); // now we are setting the browser's page
+                                                                 // content to the html content we made
             await page.SetContentAsync(htmlContent);
 
             var pdfBytes = await page.PdfDataAsync(new PdfOptions
@@ -39,6 +41,10 @@ namespace PdfReportGeneratorAPI.Services
             });
 
             return pdfBytes;
+
+
+
+
         }
     }
 }
