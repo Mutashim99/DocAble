@@ -18,13 +18,14 @@ namespace PdfReportGeneratorAPI.Services
             var launchOptions = new LaunchOptions
             {
                 Headless = true,
-                ExecutablePath = revisionInfo.GetExecutablePath(),
+                ExecutablePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe", // Adjust path if needed
                 Args = new[]
-                {
-                    "--no-sandbox",
-                    "--disable-setuid-sandbox"
-                }
+     {
+        "--no-sandbox",
+        "--disable-setuid-sandbox"
+    }
             };
+
 
             await using var browser = await Puppeteer.LaunchAsync(launchOptions);
             await using var page = await browser.NewPageAsync();
