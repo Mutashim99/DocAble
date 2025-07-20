@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - DocAble
+name: Build and deploy ASP.Net Core app to Azure Web App - docable
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     permissions:
       contents: read #This is required for actions/checkout
 
@@ -27,7 +27,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -36,7 +36,7 @@ jobs:
           path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: build
     
     permissions:
@@ -52,15 +52,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_86EFDF8A9A31455789594E6445AA2C30 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_FD55E86F2D714BD2BDCEAB1EE17D2CC4 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_B156049BFCA041E8B57621B59B509FC5 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0A95EF989D8C413AA6DF1D6F46DC1F18 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B796911F9EF6414FA01574D18E18F59A }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7B54F0867F6642C0BF15815A63BA1BA5 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'DocAble'
+          app-name: 'docable'
           slot-name: 'Production'
           package: .
           
