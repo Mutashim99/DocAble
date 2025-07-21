@@ -63,11 +63,11 @@
                             .AlignLeft(); // Corrected  
 
                         // Closing  
-                        column.Item().PaddingTop(40).Text($"{_letter.Closing},")
+                        column.Item().PaddingTop(20).Text($"{_letter.Closing},")
                             .FontSize(14);
 
                         // Signature  
-                        column.Item().PaddingTop(60).Text(text =>
+                        column.Item().PaddingTop(20).Text(text =>
                         {
                             text.Line(_letter.SignatureName);
                             text.Line(_letter.SignatureTitle);
