@@ -1,67 +1,150 @@
-# 📄 Project Summary – PDF Report Generator with AI (Pdfy)
+# 📄 Docable – Turn Data into Documents Seamlessly
 
-## 🎯 Project Goal:
-Build a full-stack PDF Report Generator that accepts structured JSON input and returns a styled, downloadable PDF using dynamic templates. The system also uses AI (Groq + Mixtral) to intelligently enhance or complete missing data when necessary, making it smart and user-friendly.
+**Docable** is a powerful, minimal API service that transforms your structured JSON data into beautifully styled PDF documents using predefined templates. It's perfect for generating invoices, letters, and more — all through a simple POST request.
+
+---
+## ✨ Live Preview : https://docable.vercel.app/
+
+- Input JSON in editor
+- Select template (Invoice / Letter)
+- Get instant PDF preview
+
+  
+## 🚀 Features
+
+- ⚡ Convert JSON to PDF instantly
+- 🧾 Built-in templates: Invoice, Letter
+- 🌐 REST API – easy to integrate
+- 🖥️ Live frontend for testing and preview
+- 🎨 Built with QuestPDF and React (Tailwind)
 
 ---
 
-## 🧠 Core Functionalities
+## 📦 Tech Stack
 
-- ✅ Accept JSON input (via API or form)
-- ✅ Map data to Scriban template (e.g., letter, invoice, summary)
-- ✅ Render HTML → PDF using DinkToPdf
-- ✅ Return the final PDF to the user
-- ✅ Use **Groq + Mixtral AI API** to auto-generate missing or enhanced content
-- ✅ Supports multiple real-world use cases:
-  - Letter generator (resignation, visa, job offer)
-  - Invoice/report builder
-  - Summary PDF from raw inputs (future)
+| Layer     | Technology              |
+|-----------|--------------------------|
+| Backend   | ASP.NET Core Web API     |
+| PDF Engine| QuestPDF                 |
+| Frontend  | React + Tailwind CSS     |
+| Templating| Scriban (for structure)  |
 
 ---
 
-## 🧪 Tech Stack
+## 📬 API Usage
 
-### Backend
-- ASP.NET Core Web API
-- Scriban (template engine)
-- DinkToPdf (HTML to PDF)
-- HttpClient (AI calls)
-- Optional: Docker, GitHub Actions, Render or Azure for deployment
+### Base URL
 
-### AI Integration
-- **Groq API** (using Mixtral model)
-- Use cases:
-  - Generate letter content from short prompts
-  - Fill missing fields in JSON
-  - Polish or rephrase input
+```
+https://docable.azurewebsites.net/api/pdf/generate/{template}
+```
 
-### Frontend (Planned)
-- React or Next.js
-- TailwindCSS
-- Simple UI to fill form, preview, and download PDF
+### Supported Templates
+
+- `invoice`
+- `letter`
+
+### Example Request (invoice)
+
+**POST** `/api/pdf/generate/invoice`  
+Content-Type: `application/json`
+
+```json
+{
+  "companyName": "string",
+  "invoiceNumber": "string",
+  "...": "..."
+}
+```
+
+### Response
+
+- Content-Type: `application/pdf`
+- Returns: PDF blob
+
+Example (JavaScript):
+
+```js
+const blob = await response.blob();
+const url = URL.createObjectURL(blob);
+window.open(url);
+```
 
 ---
 
-## 🧱 Architecture Flow
+## 🖥️ Running Locally
 
-## JSON Input → Validate/Parse → [AI Fallback if needed] → Scriban Template → HTML → DinkToPdf → PDF Output
+### Backend (.NET API)
 
-
+```bash
+dotnet restore
+dotnet run
+```
 ---
 
-## 🛠 Key Features To Build
+## 📖 Templates
 
-- `POST /generate-letter` endpoint
-- Letter, invoice, summary templates (customizable)
-- AI integration only when user input is incomplete or basic
-- Optional features:
-  - API Key auth for SaaS model
-  - Rate limiting per user
-  - Frontend: Template preview & regenerate with AI
+### 1. Invoice Template JSON
 
----
+```json
+{
+  "companyName": "string",
+  "companyStreet": "string",
+  "companyCityZip": "string",
+  "companyPhone": "string",
+  "companyFax": "string",
+  "companyWebsite": "string",
+  "invoiceDate": "string",
+  "invoiceNumber": "string",
+  "customerId": "string",
+  "dueDate": "string",
+  "clientName": "string",
+  "clientCompany": "string",
+  "clientStreet": "string",
+  "clientCityZip": "string",
+  "clientPhone": "string",
+  "items": [
+    {
+      "description": "string",
+      "isTaxed": true,
+      "amount": 0
+    }
+  ],
+  "subtotal": 0,
+  "taxableAmount": 0,
+  "taxRate": 0,
+  "taxDue": 0,
+  "otherCharges": 0,
+  "total": 0,
+  "otherComments": [
+    "string"
+  ],
+  "contactInfo": "string"
+}
+```
 
-## 💡 Vision
+### 2. Letter Template JSON
 
-> A lightweight, developer-friendly API and micro-SaaS tool that generates polished business documents from JSON input — enhanced by AI when needed.
+```json
+{
+  "senderName": "string",
+  "senderTitle": "string",
+  "senderCompany": "string",
+  "senderAddress": "string",
+  "recipientName": "string",
+  "recipientTitle": "string",
+  "recipientCompany": "string",
+  "recipientAddress": "string",
+  "date": "string",
+  "subject": "string",
+  "body": "string",
+  "closing": "string",
+  "signatureName": "string",
+  "signatureTitle": "string"
+}
+```
 
+
+## 📝 License
+
+MIT © 2025 Mutashim / Docable
