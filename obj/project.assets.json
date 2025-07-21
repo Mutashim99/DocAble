@@ -13,117 +13,6 @@
           "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "8.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
-          "Microsoft.Extensions.Options": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Options/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
-          "Microsoft.Extensions.Primitives": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/Microsoft.Extensions.Options.targets": {}
-        }
-      },
-      "Microsoft.Extensions.Primitives/8.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
       "Microsoft.OpenApi/1.6.14": {
         "type": "package",
         "compile": {
@@ -137,37 +26,142 @@
           }
         }
       },
-      "PuppeteerSharp/20.2.2": {
+      "QuestPDF/2025.7.0": {
         "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "8.0.0"
-        },
         "compile": {
-          "lib/net8.0/PuppeteerSharp.dll": {
+          "lib/net8.0/QuestPDF.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/PuppeteerSharp.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Scriban/6.2.1": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Scriban.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Scriban.dll": {
+          "lib/net8.0/QuestPDF.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "build/Scriban.props": {},
-          "build/Scriban.targets": {}
+          "buildTransitive/QuestPDF.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libQuestPdfSkia.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-arm64/native/libcrypto.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-arm64/native/libjpeg.so.8": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-arm64/native/libqpdf.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-musl-x64/native/libQuestPdfSkia.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-musl-x64/native/libcrypto.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-musl-x64/native/libjpeg.so.8": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-musl-x64/native/libqpdf.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-x64/native/libQuestPdfSkia.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libcrypto.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libjpeg.so.8": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libqpdf.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/libQuestPdfSkia.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-arm64/native/libcrypto.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-arm64/native/libjpeg.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-arm64/native/libqpdf.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libQuestPdfSkia.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/osx-x64/native/libcrypto.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/osx-x64/native/libjpeg.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/osx-x64/native/libqpdf.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/QuestPdfSkia.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libgcc_s_seh-1.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libstdc++-6.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libwinpthread-1.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/qpdf.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/QuestPdfSkia.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libgcc_s_dw2-1.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libstdc++-6.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libwinpthread-1.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/qpdf.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
         }
       },
       "Swashbuckle.AspNetCore/6.6.2": {
@@ -467,252 +461,6 @@
         "tools/netcoreapp2.1/System.Diagnostics.DiagnosticSource.dll"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection/8.0.0": {
-      "sha512": "V8S3bsm50ig6JSyrbcJJ8bW2b9QLGouz+G1miK3UTaOWmMtFwNNNzUf4AleyDWUmTrWMLNnFSLEQtxmxgNQnNQ==",
-      "type": "package",
-      "path": "microsoft.extensions.dependencyinjection/8.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.targets",
-        "lib/net462/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/net462/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/net6.0/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/net7.0/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/net8.0/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/net8.0/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
-        "microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
-        "microsoft.extensions.dependencyinjection.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
-      "sha512": "cjWrLkJXK0rs4zofsK4bSdg+jhDLTaxrkXu4gS6Y7MAlCvRyNNgwY/lJi5RDlQOnSZweHqoyvgvbdvQsRIW+hg==",
-      "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
-        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
-        "microsoft.extensions.dependencyinjection.abstractions.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "Microsoft.Extensions.Logging/8.0.0": {
-      "sha512": "tvRkov9tAJ3xP51LCv3FJ2zINmv1P8Hi8lhhtcKGqM+ImiTCC84uOPEI4z8Cdq2C3o9e+Aa0Gw0rmrsJD77W+w==",
-      "type": "package",
-      "path": "microsoft.extensions.logging/8.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/Microsoft.Extensions.Logging.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.targets",
-        "lib/net462/Microsoft.Extensions.Logging.dll",
-        "lib/net462/Microsoft.Extensions.Logging.xml",
-        "lib/net6.0/Microsoft.Extensions.Logging.dll",
-        "lib/net6.0/Microsoft.Extensions.Logging.xml",
-        "lib/net7.0/Microsoft.Extensions.Logging.dll",
-        "lib/net7.0/Microsoft.Extensions.Logging.xml",
-        "lib/net8.0/Microsoft.Extensions.Logging.dll",
-        "lib/net8.0/Microsoft.Extensions.Logging.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Logging.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Logging.xml",
-        "lib/netstandard2.1/Microsoft.Extensions.Logging.dll",
-        "lib/netstandard2.1/Microsoft.Extensions.Logging.xml",
-        "microsoft.extensions.logging.8.0.0.nupkg.sha512",
-        "microsoft.extensions.logging.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "Microsoft.Extensions.Logging.Abstractions/8.0.0": {
-      "sha512": "arDBqTgFCyS0EvRV7O3MZturChstm50OJ0y9bDJvAcmEPJm0FFpFyjU/JLYyStNGGey081DvnQYlncNX5SJJGA==",
-      "type": "package",
-      "path": "microsoft.extensions.logging.abstractions/8.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/roslyn3.11/cs/Microsoft.Extensions.Logging.Generators.dll",
-        "analyzers/dotnet/roslyn3.11/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll",
-        "analyzers/dotnet/roslyn4.0/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll",
-        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "buildTransitive/net461/Microsoft.Extensions.Logging.Abstractions.targets",
-        "buildTransitive/net462/Microsoft.Extensions.Logging.Abstractions.targets",
-        "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
-        "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
-        "lib/net462/Microsoft.Extensions.Logging.Abstractions.dll",
-        "lib/net462/Microsoft.Extensions.Logging.Abstractions.xml",
-        "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll",
-        "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll",
-        "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll",
-        "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
-        "microsoft.extensions.logging.abstractions.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "Microsoft.Extensions.Options/8.0.0": {
-      "sha512": "JOVOfqpnqlVLUzINQ2fox8evY2SKLYJ3BV8QDe/Jyp21u1T7r45x/R/5QdteURMR5r01GxeJSBBUOCOyaNXA3g==",
-      "type": "package",
-      "path": "microsoft.extensions.options/8.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll",
-        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
-        "buildTransitive/net461/Microsoft.Extensions.Options.targets",
-        "buildTransitive/net462/Microsoft.Extensions.Options.targets",
-        "buildTransitive/net6.0/Microsoft.Extensions.Options.targets",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Options.targets",
-        "buildTransitive/netstandard2.0/Microsoft.Extensions.Options.targets",
-        "lib/net462/Microsoft.Extensions.Options.dll",
-        "lib/net462/Microsoft.Extensions.Options.xml",
-        "lib/net6.0/Microsoft.Extensions.Options.dll",
-        "lib/net6.0/Microsoft.Extensions.Options.xml",
-        "lib/net7.0/Microsoft.Extensions.Options.dll",
-        "lib/net7.0/Microsoft.Extensions.Options.xml",
-        "lib/net8.0/Microsoft.Extensions.Options.dll",
-        "lib/net8.0/Microsoft.Extensions.Options.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Options.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
-        "lib/netstandard2.1/Microsoft.Extensions.Options.dll",
-        "lib/netstandard2.1/Microsoft.Extensions.Options.xml",
-        "microsoft.extensions.options.8.0.0.nupkg.sha512",
-        "microsoft.extensions.options.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "Microsoft.Extensions.Primitives/8.0.0": {
-      "sha512": "bXJEZrW9ny8vjMF1JV253WeLhpEVzFo1lyaZu1vQ4ZxWUlVvknZ/+ftFgVheLubb4eZPSwwxBeqS1JkCOjxd8g==",
-      "type": "package",
-      "path": "microsoft.extensions.primitives/8.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/Microsoft.Extensions.Primitives.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Primitives.targets",
-        "lib/net462/Microsoft.Extensions.Primitives.dll",
-        "lib/net462/Microsoft.Extensions.Primitives.xml",
-        "lib/net6.0/Microsoft.Extensions.Primitives.dll",
-        "lib/net6.0/Microsoft.Extensions.Primitives.xml",
-        "lib/net7.0/Microsoft.Extensions.Primitives.dll",
-        "lib/net7.0/Microsoft.Extensions.Primitives.xml",
-        "lib/net8.0/Microsoft.Extensions.Primitives.dll",
-        "lib/net8.0/Microsoft.Extensions.Primitives.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
-        "microsoft.extensions.primitives.8.0.0.nupkg.sha512",
-        "microsoft.extensions.primitives.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "Microsoft.OpenApi/1.6.14": {
       "sha512": "tTaBT8qjk3xINfESyOPE2rIellPvB7qpVqiWiyA/lACVvz+xOGiXhFUfohcx82NLbi5avzLW0lx+s6oAqQijfw==",
       "type": "package",
@@ -728,210 +476,94 @@
         "microsoft.openapi.nuspec"
       ]
     },
-    "PuppeteerSharp/20.2.2": {
-      "sha512": "66l7Uzh4mzTaFqRkkP62Jno/lh+ORNEHY2QjtevbQwqQ6TO1w80wZqNGeUR416aw8AEEFZs8vO9MOaJx8i9ySw==",
+    "QuestPDF/2025.7.0": {
+      "sha512": "yRjdm7p300eEuy4Mi9YdMuecl2cvTU/CV+IHHDzw22Uf43/0C2zeG4c+MthZqkpQNJPg0Agha1iBSmLBxX1vHA==",
       "type": "package",
-      "path": "puppeteersharp/20.2.2",
+      "path": "questpdf/2025.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net8.0/PuppeteerSharp.dll",
-        "lib/net8.0/PuppeteerSharp.xml",
-        "lib/netstandard2.0/PuppeteerSharp.dll",
-        "lib/netstandard2.0/PuppeteerSharp.xml",
-        "puppeteersharp.20.2.2.nupkg.sha512",
-        "puppeteersharp.nuspec"
-      ]
-    },
-    "Scriban/6.2.1": {
-      "sha512": "jauX7gvreKvlD1+tkQ9D1i0kNg2p3P1ZqkDftJeTB7JAF7zKtafpyKTtr3m5Kr6d4GYw0CDfRcm2P07/efwdqQ==",
-      "type": "package",
-      "path": "scriban/6.2.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/Scriban.props",
-        "build/Scriban.targets",
-        "lib/net7.0/Scriban.dll",
-        "lib/net7.0/Scriban.xml",
-        "lib/netstandard2.0/Scriban.dll",
-        "lib/netstandard2.0/Scriban.xml",
-        "readme.md",
-        "scriban.6.2.1.nupkg.sha512",
-        "scriban.nuspec",
-        "scriban.png",
-        "src/Scriban/.editorconfig",
-        "src/Scriban/Functions/ArrayFunctions.cs",
-        "src/Scriban/Functions/BuiltinFunctions.cs",
-        "src/Scriban/Functions/DateTimeFunctions.cs",
-        "src/Scriban/Functions/HtmlFunctions.cs",
-        "src/Scriban/Functions/IncludeFunction.cs",
-        "src/Scriban/Functions/IncludeJoinFunction.cs",
-        "src/Scriban/Functions/LiquidBuiltinsFunctions.cs",
-        "src/Scriban/Functions/MathFunctions.cs",
-        "src/Scriban/Functions/ObjectFunctions.cs",
-        "src/Scriban/Functions/RegexFunctions.cs",
-        "src/Scriban/Functions/StringFunctions.cs",
-        "src/Scriban/Functions/TimeSpanFunctions.cs",
-        "src/Scriban/Helpers/BoxHelper.cs",
-        "src/Scriban/Helpers/CharHelper.cs",
-        "src/Scriban/Helpers/FastStack.cs",
-        "src/Scriban/Helpers/InlineList.cs",
-        "src/Scriban/Helpers/ReflectionHelper.cs",
-        "src/Scriban/Helpers/StringHelper.cs",
-        "src/Scriban/Helpers/ThrowHelper.cs",
-        "src/Scriban/LogMessageBag.cs",
-        "src/Scriban/Parsing/Lexer.cs",
-        "src/Scriban/Parsing/LexerOptions.cs",
-        "src/Scriban/Parsing/LogMessage.cs",
-        "src/Scriban/Parsing/Parser.Expressions.cs",
-        "src/Scriban/Parsing/Parser.Statements.Liquid.cs",
-        "src/Scriban/Parsing/Parser.Statements.Scriban.cs",
-        "src/Scriban/Parsing/Parser.Statements.cs",
-        "src/Scriban/Parsing/Parser.Terminals.cs",
-        "src/Scriban/Parsing/Parser.cs",
-        "src/Scriban/Parsing/ParserOptions.cs",
-        "src/Scriban/Parsing/ScriptLang.cs",
-        "src/Scriban/Parsing/ScriptMode.cs",
-        "src/Scriban/Parsing/SourceSpan.cs",
-        "src/Scriban/Parsing/TextPosition.cs",
-        "src/Scriban/Parsing/Token.cs",
-        "src/Scriban/Parsing/TokenTextAttribute.cs",
-        "src/Scriban/Parsing/TokenType.cs",
-        "src/Scriban/Parsing/TokenTypeExtensions.cs",
-        "src/Scriban/Parsing/Util.cs",
-        "src/Scriban/Runtime/Accessors/ArrayAccessor.cs",
-        "src/Scriban/Runtime/Accessors/DictionaryAccessor.cs",
-        "src/Scriban/Runtime/Accessors/ListAccessor.cs",
-        "src/Scriban/Runtime/Accessors/NullAccessor.cs",
-        "src/Scriban/Runtime/Accessors/PrimitiveAccessor.cs",
-        "src/Scriban/Runtime/Accessors/ScriptObjectAccessor.cs",
-        "src/Scriban/Runtime/Accessors/StringAccessor.cs",
-        "src/Scriban/Runtime/Accessors/TypedObjectAccessor.cs",
-        "src/Scriban/Runtime/CustomFunction.Generated.cs",
-        "src/Scriban/Runtime/DelegateCustomFunction.cs",
-        "src/Scriban/Runtime/DynamicCustomFunction.cs",
-        "src/Scriban/Runtime/EmptyScriptObject.cs",
-        "src/Scriban/Runtime/IListAccessor.cs",
-        "src/Scriban/Runtime/IObjectAccessor.cs",
-        "src/Scriban/Runtime/IScriptCustomFunction.cs",
-        "src/Scriban/Runtime/IScriptObject.cs",
-        "src/Scriban/Runtime/IScriptOutput.cs",
-        "src/Scriban/Runtime/IScriptTransformable.cs",
-        "src/Scriban/Runtime/ITemplateLoader.cs",
-        "src/Scriban/Runtime/JsonElementExtensions.cs",
-        "src/Scriban/Runtime/MemberFilterDelegate.cs",
-        "src/Scriban/Runtime/MemberRenamerDelegate.cs",
-        "src/Scriban/Runtime/ScriptArray.cs",
-        "src/Scriban/Runtime/ScriptLazy.cs",
-        "src/Scriban/Runtime/ScriptMemberIgnoreAttribute.cs",
-        "src/Scriban/Runtime/ScriptMemberImportFlags.cs",
-        "src/Scriban/Runtime/ScriptObject.cs",
-        "src/Scriban/Runtime/ScriptObjectExtensions.cs",
-        "src/Scriban/Runtime/ScriptPipeArguments.cs",
-        "src/Scriban/Runtime/ScriptRange.cs",
-        "src/Scriban/Runtime/StandardMemberRenamer.cs",
-        "src/Scriban/Runtime/StringBuilderOutput.cs",
-        "src/Scriban/Runtime/TextWriterOutput.cs",
-        "src/Scriban/ScribanAsync.generated.cs",
-        "src/Scriban/ScribanVisitors.generated.cs",
-        "src/Scriban/ScriptPrinter.cs",
-        "src/Scriban/ScriptPrinterOptions.cs",
-        "src/Scriban/Syntax/Expressions/IScriptTerminal.cs",
-        "src/Scriban/Syntax/Expressions/ScriptAnonymousFunction.cs",
-        "src/Scriban/Syntax/Expressions/ScriptArgumentBinary.cs",
-        "src/Scriban/Syntax/Expressions/ScriptArrayInitializerExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptAssignExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptBinaryExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptBinaryOperator.cs",
-        "src/Scriban/Syntax/Expressions/ScriptConditionalExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptFunctionCall.cs",
-        "src/Scriban/Syntax/Expressions/ScriptIncrementDecrementExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptIndexerExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptInterpolatedExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptInterpolatedStringExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptIsEmptyExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptLiteral.cs",
-        "src/Scriban/Syntax/Expressions/ScriptMemberExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptNamedArgument.cs",
-        "src/Scriban/Syntax/Expressions/ScriptNestedExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptObjectInitializerExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptObjectMember.cs",
-        "src/Scriban/Syntax/Expressions/ScriptPipeCall.cs",
-        "src/Scriban/Syntax/Expressions/ScriptThisExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptUnaryExpression.cs",
-        "src/Scriban/Syntax/Expressions/ScriptUnaryOperator.cs",
-        "src/Scriban/Syntax/Expressions/ScriptVariable.cs",
-        "src/Scriban/Syntax/Expressions/ScriptVariableScope.cs",
-        "src/Scriban/Syntax/IScriptConvertibleFrom.cs",
-        "src/Scriban/Syntax/IScriptConvertibleTo.cs",
-        "src/Scriban/Syntax/IScriptCustomBinaryOperation.cs",
-        "src/Scriban/Syntax/IScriptCustomImplicitMultiplyPrecedence.cs",
-        "src/Scriban/Syntax/IScriptCustomType.cs",
-        "src/Scriban/Syntax/IScriptCustomTypeInfo.cs",
-        "src/Scriban/Syntax/IScriptCustomUnaryOperation.cs",
-        "src/Scriban/Syntax/IScriptNamedArgumentContainer.cs",
-        "src/Scriban/Syntax/IScriptVariablePath.cs",
-        "src/Scriban/Syntax/IScriptVisitorContext.cs",
-        "src/Scriban/Syntax/ScientificFunctionCallRewriter.cs",
-        "src/Scriban/Syntax/ScriptArgumentException.cs",
-        "src/Scriban/Syntax/ScriptCloner.cs",
-        "src/Scriban/Syntax/ScriptFormatter.cs",
-        "src/Scriban/Syntax/ScriptFormatterExtensions.cs",
-        "src/Scriban/Syntax/ScriptFormatterFlags.cs",
-        "src/Scriban/Syntax/ScriptFormatterOptions.cs",
-        "src/Scriban/Syntax/ScriptFrontMatter.cs",
-        "src/Scriban/Syntax/ScriptIdentifier.cs",
-        "src/Scriban/Syntax/ScriptKeyword.cs",
-        "src/Scriban/Syntax/ScriptList.cs",
-        "src/Scriban/Syntax/ScriptNode.cs",
-        "src/Scriban/Syntax/ScriptNodeExtensions.cs",
-        "src/Scriban/Syntax/ScriptPage.cs",
-        "src/Scriban/Syntax/ScriptParameterContainerExtensions.cs",
-        "src/Scriban/Syntax/ScriptRewriter.cs",
-        "src/Scriban/Syntax/ScriptRuntimeException.cs",
-        "src/Scriban/Syntax/ScriptStringSlice.cs",
-        "src/Scriban/Syntax/ScriptSyntaxAttribute.cs",
-        "src/Scriban/Syntax/ScriptToken.cs",
-        "src/Scriban/Syntax/ScriptTrivia.cs",
-        "src/Scriban/Syntax/ScriptTriviaType.cs",
-        "src/Scriban/Syntax/ScriptTriviaTypeExtensions.cs",
-        "src/Scriban/Syntax/ScriptTrivias.cs",
-        "src/Scriban/Syntax/ScriptVerbatim.cs",
-        "src/Scriban/Syntax/ScriptVisitor.cs",
-        "src/Scriban/Syntax/Statements/ScriptBlockStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptBreakStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptCaptureStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptCaseStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptConditionStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptContinueStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptElseStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptEndStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptEscapeStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptExpressionStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptFlowState.cs",
-        "src/Scriban/Syntax/Statements/ScriptForStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptFunction.cs",
-        "src/Scriban/Syntax/Statements/ScriptIfStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptImportStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptLoopStatementBase.cs",
-        "src/Scriban/Syntax/Statements/ScriptNopStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptParameter.cs",
-        "src/Scriban/Syntax/Statements/ScriptRawStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptReadOnlyStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptReturnStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptTableRowStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptWhenStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptWhileStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptWhitespaceMode.cs",
-        "src/Scriban/Syntax/Statements/ScriptWithStatement.cs",
-        "src/Scriban/Syntax/Statements/ScriptWrapStatement.cs",
-        "src/Scriban/Template.cs",
-        "src/Scriban/TemplateContext.Helpers.cs",
-        "src/Scriban/TemplateContext.Variables.cs",
-        "src/Scriban/TemplateContext.cs"
+        "Contributors.md",
+        "Description.md",
+        "Documentation.xml",
+        "ExternalDependencyLicenses/emsdk.txt",
+        "ExternalDependencyLicenses/expat.txt",
+        "ExternalDependencyLicenses/harfbuzz.txt",
+        "ExternalDependencyLicenses/icu.txt",
+        "ExternalDependencyLicenses/libjpeg-turbo.txt",
+        "ExternalDependencyLicenses/libpng.txt",
+        "ExternalDependencyLicenses/libwebp.txt",
+        "ExternalDependencyLicenses/ninja-build.txt",
+        "ExternalDependencyLicenses/qpdf.txt",
+        "ExternalDependencyLicenses/readme.txt",
+        "ExternalDependencyLicenses/skia.txt",
+        "ExternalDependencyLicenses/wuffs.txt",
+        "ExternalDependencyLicenses/zlib.txt",
+        "LatoFont/Lato-Black.ttf",
+        "LatoFont/Lato-BlackItalic.ttf",
+        "LatoFont/Lato-Bold.ttf",
+        "LatoFont/Lato-BoldItalic.ttf",
+        "LatoFont/Lato-ExtraBold.ttf",
+        "LatoFont/Lato-ExtraBoldItalic.ttf",
+        "LatoFont/Lato-ExtraLight.ttf",
+        "LatoFont/Lato-ExtraLightItalic.ttf",
+        "LatoFont/Lato-Italic.ttf",
+        "LatoFont/Lato-Light.ttf",
+        "LatoFont/Lato-LightItalic.ttf",
+        "LatoFont/Lato-Medium.ttf",
+        "LatoFont/Lato-MediumItalic.ttf",
+        "LatoFont/Lato-Regular.ttf",
+        "LatoFont/Lato-SemiBold.ttf",
+        "LatoFont/Lato-SemiBoldItalic.ttf",
+        "LatoFont/Lato-Thin.ttf",
+        "LatoFont/Lato-ThinItalic.ttf",
+        "LatoFont/OFL.txt",
+        "Logo.png",
+        "PackageLicense.md",
+        "README.md",
+        "ReleaseNotes.txt",
+        "build/QuestPDF.targets",
+        "build/net4/QuestPDF.targets",
+        "buildTransitive/QuestPDF.targets",
+        "buildTransitive/net4/QuestPDF.targets",
+        "lib/net6.0/QuestPDF.dll",
+        "lib/net6.0/QuestPDF.xml",
+        "lib/net8.0/QuestPDF.dll",
+        "lib/net8.0/QuestPDF.xml",
+        "lib/netstandard2.0/QuestPDF.dll",
+        "lib/netstandard2.0/QuestPDF.xml",
+        "questpdf.2025.7.0.nupkg.sha512",
+        "questpdf.nuspec",
+        "runtimes/linux-arm64/native/libQuestPdfSkia.so",
+        "runtimes/linux-arm64/native/libcrypto.so",
+        "runtimes/linux-arm64/native/libjpeg.so.8",
+        "runtimes/linux-arm64/native/libqpdf.so",
+        "runtimes/linux-musl-x64/native/libQuestPdfSkia.so",
+        "runtimes/linux-musl-x64/native/libcrypto.so",
+        "runtimes/linux-musl-x64/native/libjpeg.so.8",
+        "runtimes/linux-musl-x64/native/libqpdf.so",
+        "runtimes/linux-x64/native/libQuestPdfSkia.so",
+        "runtimes/linux-x64/native/libcrypto.so",
+        "runtimes/linux-x64/native/libjpeg.so.8",
+        "runtimes/linux-x64/native/libqpdf.so",
+        "runtimes/osx-arm64/native/libQuestPdfSkia.dylib",
+        "runtimes/osx-arm64/native/libcrypto.dylib",
+        "runtimes/osx-arm64/native/libjpeg.dylib",
+        "runtimes/osx-arm64/native/libqpdf.dylib",
+        "runtimes/osx-x64/native/libQuestPdfSkia.dylib",
+        "runtimes/osx-x64/native/libcrypto.dylib",
+        "runtimes/osx-x64/native/libjpeg.dylib",
+        "runtimes/osx-x64/native/libqpdf.dylib",
+        "runtimes/win-x64/native/QuestPdfSkia.dll",
+        "runtimes/win-x64/native/libgcc_s_seh-1.dll",
+        "runtimes/win-x64/native/libstdc++-6.dll",
+        "runtimes/win-x64/native/libwinpthread-1.dll",
+        "runtimes/win-x64/native/qpdf.dll",
+        "runtimes/win-x86/native/QuestPdfSkia.dll",
+        "runtimes/win-x86/native/libgcc_s_dw2-1.dll",
+        "runtimes/win-x86/native/libstdc++-6.dll",
+        "runtimes/win-x86/native/libwinpthread-1.dll",
+        "runtimes/win-x86/native/qpdf.dll"
       ]
     },
     "Swashbuckle.AspNetCore/6.6.2": {
@@ -1039,8 +671,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "PuppeteerSharp >= 20.2.2",
-      "Scriban >= 6.2.1",
+      "QuestPDF >= 2025.7.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
@@ -1094,13 +725,9 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "PuppeteerSharp": {
+          "QuestPDF": {
             "target": "Package",
-            "version": "[20.2.2, )"
-          },
-          "Scriban": {
-            "target": "Package",
-            "version": "[6.2.1, )"
+            "version": "[2025.7.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

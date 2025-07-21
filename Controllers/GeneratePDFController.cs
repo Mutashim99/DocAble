@@ -19,51 +19,25 @@ namespace PdfReportGeneratorAPI.Controllers
         }
 
         [HttpPost("invoice")]
-        public async Task<IActionResult> GetInvoice([FromBody] Invoice invoice)
+        public IActionResult GenerateInvoicePdf([FromBody] Invoice invoice)
         {
-            try { 
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return BadRequest("Incorrect Format");
             }
-            var templatePath = Path.Combine(env.ContentRootPath, "Templates", "InvoiceTemplate.html");
-            if(!System.IO.File.Exists(templatePath)) {
-              return NotFound("Can not find the Template for Invoice");
-            }
-            var templateContent = await System.IO.File.ReadAllTextAsync(templatePath);
-
-            var pdfReturnedFromService = await pdfGeneratorService.GeneratePdfAsync<Invoice>(invoice, templateContent);
-
-            return File(pdfReturnedFromService, "application/pdf", "Invoice.pdf");
-            }
-            catch (Exception ex) {
-                return StatusCode(500, $"Error generating PDF: {ex.Message}");
-            }
+            var pdfBytes = pdfGeneratorService.GeneratePdfFromModel(invoice);
+            return File(pdfBytes, "application/pdf", "invoice.pdf");
         }
+
         [HttpPost("letter")]
-        public async Task<IActionResult> GetLetter([FromBody] Letter letter)
+        public IActionResult GenerateLetterPdf([FromBody] Letter letter)
         {
-            try
+            if (!ModelState.IsValid)
             {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-                var templatePath = Path.Combine(env.ContentRootPath, "Templates", "LetterTemplate.html");
-                if (!System.IO.File.Exists(templatePath))
-                {
-                    return NotFound("Can not find the Template for Letter");
-                }
-                var templateContent = await System.IO.File.ReadAllTextAsync(templatePath);
-
-                var pdfReturnedFromService = await pdfGeneratorService.GeneratePdfAsync<Letter>(letter, templateContent);
-
-                return File(pdfReturnedFromService, "application/pdf", "Letter.pdf");
+                return BadRequest("Incorrect Format");
             }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Error generating PDF: {ex.Message}");
-            }
+            var pdfBytes = pdfGeneratorService.GeneratePdfFromModel(letter);
+            return File(pdfBytes, "application/pdf", "letter.pdf");
         }
     }
 }

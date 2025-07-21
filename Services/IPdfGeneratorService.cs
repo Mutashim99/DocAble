@@ -2,6 +2,6 @@
 {
     public interface IPdfGeneratorService
     {
-        Task<Byte[]> GeneratePdfAsync<T>(T model, string template);
+        byte[] GeneratePdfFromModel(object model);
     }
 }

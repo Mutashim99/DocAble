@@ -50,13 +50,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "PuppeteerSharp": {
+            "QuestPDF": {
               "target": "Package",
-              "version": "[20.2.2, )"
-            },
-            "Scriban": {
-              "target": "Package",
-              "version": "[6.2.1, )"
+              "version": "[2025.7.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
